@@ -27,10 +27,10 @@ function handleTodoList() {
 
     // Determine what the message wants us to do.
     $body = $_REQUEST['Body'] ?? '';
-    preg_match('#^(add|list|remove) *(.*)?$#i', $body, $matches);
+    preg_match('#^(add|list|remove|complete) *(.*)?$#i', $body, $matches);
 
     if (empty($matches[1])) {
-        throw new InvalidArgumentException('Valid actions are "add", "list", and "remove".');
+        throw new InvalidArgumentException('Valid actions are "add", "list", "remove", or "complete".');
     }
 
     $action = strtolower($matches[1]);
@@ -50,6 +50,7 @@ function handleTodoList() {
             break;
 
         case 'remove':
+        case 'complete':
             $number = intval($data);
             $todo->remove($number - 1);
             $handler->writeList($todo);
