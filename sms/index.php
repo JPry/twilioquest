@@ -52,6 +52,7 @@ function handleTodoList() {
         case 'remove':
             $number = intval($data);
             $todo->remove($number - 1);
+            $handler->writeList($todo);
             $responder->addMessage(new Message(sprintf('Item #%d removed from the list', $number)));
             break;
     }
