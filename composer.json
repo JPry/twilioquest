@@ -1,0 +1,17 @@
+{
+    "name": "jpry/twilioquest",
+    "require": {
+        "twilio/sdk": "^5.24"
+    },
+    "authors": [
+        {
+            "name": "Jeremy Pry",
+            "email": "jeremy.pry@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JPry\\TwilioQuest\\": "src/"
+        }
+    }
+}

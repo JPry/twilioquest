@@ -1,0 +1,6 @@
+# Everything in this directory
+*
+
+# ...except these files
+!.gitignore
+!sample.config.json
